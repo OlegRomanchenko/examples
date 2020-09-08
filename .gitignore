@@ -1,0 +1,10 @@
+
+TableViewPhoneBook/TableViewPhoneBook.pro.user
+*.o
+*.exe
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/.qmake.stash
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/Makefile
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_predefs.h
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/moc_TableModel.cpp
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/qrc_qml.cpp
+build-TableViewPhoneBook-Desktop_Qt_5_14_1_MinGW_64_bit-Debug/test_PhoneBook.txt
