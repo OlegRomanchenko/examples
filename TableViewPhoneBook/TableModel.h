@@ -1,15 +1,16 @@
-#ifndef TABLEMODEL_H
-#define TABLEMODEL_H
+#ifndef TABLEMODEL_PHONE_BOOK_H
+#define TABLEMODEL_PHONE_BOOK_H
 
 #include <QAbstractTableModel>
-#include <QHash>
+#include <qqml.h>
 
-class TableModel : public QAbstractTableModel
+class TableModelPhoneBook : public QAbstractTableModel
 {
   Q_OBJECT
+  QML_ELEMENT
 
 public:
-  explicit TableModel(QObject *parent = nullptr);
+  explicit TableModelPhoneBook(QObject *parent = nullptr);
 
   // Header:
   QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
@@ -19,13 +20,17 @@ public:
 
   QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
 
+  QHash<int, QByteArray> roleNames() const override
+  {
+      return { {Qt::DisplayRole, "display"} };
+  }
+
   // Load data from file:
-  void loadDataFromFile(const QString &fileName);
+  Q_INVOKABLE void loadDataFromFile(const QString &fileName);
+
 private:
 	enum class Header{ eUserID = 0, eUserName, eUserPhone, eMaxColumnCount};
-	size_t m_columnCount = 0;
-	size_t m_rowCount = 0;
-	QHash<size_t, QStringList> m_hash;
+	QVector<QStringList> m_Data;
 };
 
-#endif // TABLEMODEL_H
+#endif // TABLEMODEL_PHONE_BOOK_H
